@@ -17,6 +17,8 @@ export class AppComponent {
     avatar: 'https://www.peru.travel/Contenido/AcercaDePeru/Imagen/es/1/0.0/Principal/Machu%20Picchu.jpg'
   }
 
+  names: string[] = ['ernesto', 'alejandro', 'astrid']
+  NewName =  '';
   toggleButton() {
     /*this.btnDisabled = false;  */
     this.btnDisabled = !this.btnDisabled;
@@ -34,5 +36,14 @@ export class AppComponent {
   changeName(event: Event) {
     const element = event.target as HTMLInputElement;
     this.person.name = element.value;
+  }
+
+  addName() {
+    this.names.push(this.NewName)
+    this.NewName = '';
+  }
+
+  deleteName(index: number) {
+    this.names.splice(index, 1);
   }
 }
