@@ -1,7 +1,18 @@
 <h1>Class & Style</h1>
 <input type="text" required #nameInput2="ngModel" [(ngModel)]="person.name">
-<p class="message-error">El campo es Requerido</p>
+<p class="message-error" [class.invalid]="nameInput2.invalid">El campo es Requerido</p>
 
+<label [style.font-style]="nameInput3.invalid ? 'italic' : 'normal'">Nombre</label>
+<input type="text" required #nameInput3="ngModel" [(ngModel)]="person.name"/>
+<p [style.font-style]="nameInput3.invalid ? 'italic' : 'normal'">Texto de Prueba</p>
+<div class="styles">
+  <div>
+    <input type="text" [(ngModel)]="widthImg"/>
+  </div>
+  <div>
+    <img [style.width.%]="widthImg" [src]="person.avatar">
+  </div>
+</div>
 <hr/>
 
 <h1>*ngSwitch</h1>
@@ -86,13 +97,13 @@
 <button [disabled]="btnDisabled">Enviar</button>
 <input type="text" [value]="person.name">
 <progress max="100" [value]="person.age"></progress>
-<img width="200" [src]="person.avatar" alt="">
+<img width="100" [src]="person.avatar" alt="">
 <hr>
 <h1>Hola Mundo</h1>
 <h2>{{'Hola Mundo'.repeat(5)}}</h2>
 <p>3 + 3 = {{ 3 + 3}}</p>
 <h3>Hola soy {{ name }} y tengo {{age}}</h3>
-<img width="100" src={{img}} alt="image">
+<img width="200" src={{img}} alt="image">
 
 
 
