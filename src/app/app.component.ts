@@ -14,6 +14,12 @@ export class AppComponent {
   img = 'https://www.peru.travel/Contenido/AcercaDePeru/Imagen/es/1/0.0/Principal/Machu%20Picchu.jpg';
   btnDisabled = true;
 
+  register = {
+    name: '', 
+    email: '',
+    password: '',
+  }
+
   person = {
     name: 'alejandro',
     age: 25,
@@ -23,6 +29,11 @@ export class AppComponent {
   names: string[] = ['ernesto', 'alejandro', 'astrid']
   carros: string[] = ['Corolla', 'Yaris']
   NewName =  '';
+  box = { 
+    width: 100,
+    height: 100,
+    background: 'red'
+  }
   NewVehiculo = '';
 
   products: Product[] = [
@@ -94,6 +105,10 @@ export class AppComponent {
 
   deleteVehiculo(index: number) {
     this.carros.splice(index, 1);
+  }
+
+  onRegister() {
+    console.log(this.register)
   }
 
 }
